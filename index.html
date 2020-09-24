@@ -24,6 +24,7 @@
   <!-- Main Stylesheet File -->
   <link href="css/style.css" rel="stylesheet">
 
+
   <!-- =======================================================
     Theme Name: DevFolio
     Theme URL: https://bootstrapmade.com/devfolio-bootstrap-portfolio-html-template/
@@ -641,7 +642,7 @@
                     </h5>
                   </div>
                   <div>
-                      <form action="" method="post" role="form" class="contactForm">
+                      <form action="" method="post" role="form" class="contactForm" name="google-sheet">
                       <div id="sendmessage">Your message has been sent. Thank you!</div>
                       <div id="errormessage"></div>
                       <div class="row">
@@ -676,6 +677,20 @@
                     </form>
                   </div>
                 </div>
+<script>
+            const scriptURL = 'https://script.google.com/macros/s/AKfycbx_wRANGGfACpl_JZPbt_flqtw9Y9azkYVxD3_eaFJu3pLviAxv/exec'
+            const form = document.forms['google-sheet']
+          
+            form.addEventListener('submit', e => {
+              e.preventDefault()
+              fetch(scriptURL, { method: 'POST', body: new FormData(form)})
+                .then(response => alert("Thanks for Contacting us..! We Will Contact You Soon..."))
+                .catch(error => console.error('Error!', error.message))
+            })
+          </script>
+
+        <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.1.1/js/bootstrap.min.js"></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
                 <div class="col-md-6">
                   <div class="title-box-2 pt-4 pt-md-0">
                     <h5 class="title-left">
